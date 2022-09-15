@@ -11,7 +11,7 @@ section{
 
 section:nth-child(even){
     /* background-color: rgb(81, 79, 79); */
-    background-image: linear-gradient(black,grey,black);
+    background: linear-gradient(black,grey,black);
     margin: 0px -4px;
     background-attachment: fixed;
     /* width:100vw; */
@@ -197,6 +197,7 @@ img[src$="jpeg"]{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    padding-bottom: 50px;
 }
 
 .skillbox{
@@ -250,23 +251,130 @@ img[src$="jpeg"]{
     width: 10%;
 }
 
+/****************experience&education*******************/
+
+#experience,#education{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+#experienceheading,#educationheading{
+    font-size: 2rem;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+#experienceheading h2,#educationheading h2{
+    font-family: sans-serif;
+}
+
+#experiencecontent,#educationcontent{
+    width: 80%;
+    /* border: 2px solid white; */
+    position: relative;
+}
+
+#experiencecontent>div,#educationcontent>div{
+    width: 40%;
+    position: relative;
+    margin: 2%;
+    min-height: 300px;
+    /* border: 2px solid white; */
+}
+
+#experiencecontent>div:nth-child(odd):after,#educationcontent>div:nth-child(odd):after{
+    content: '';
+    position: absolute;
+    top: 30%;
+    right: -22%;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    background-color: lightgrey;
+    z-index: 1;
+}
+
+#experiencecontent>div:nth-child(even):before,#educationcontent>div:nth-child(even)::before{
+    content: '';
+    position: absolute;
+    left: -19%;
+    top: 30%;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    background-color: lightgrey;
+    z-index: 1;
+}
+
+#experiencecontent>div:nth-child(even),#educationcontent>div:nth-child(even){
+    left: 55%;
+}
+
+#experiencecontent>div:nth-child(odd),#educationcontent>div:nth-child(odd){
+    text-align: right;
+}
+
+.expcontent,.educontent{
+    text-align: left;
+    font-family: fantasy;
+}
 
 
+.expheaddisc,.eduheaddisc{
+    margin-right: 20px;
+    margin-left: 20px;
+}
 
+.companylogo,.schoollogo{
+    position: absolute;
+    top: 30px;
+    left: 5%;
+    font-size: 3rem;
+}
 
+#experiencecontent>div:nth-child(2n) .companylogo,#educationcontent>div:nth-child(2n) .schoollogo{
+    text-align: right;
+    right: 5%;
+}
 
+.expheaddisc h3,.eduheaddisc h3{
+    color: cyan;
+}
 
+.company,.school{
+    color: lightgrey;
+}
 
+.year{
+    color:lightgrey;
+}
 
+.timeline{
+    border-left: 2px dashed white;
+    height: 69%;
+    width: 0px;
+    position: absolute;
+    top: 20%;
+}
 
+.timeline-traveller{
+    font-size: 1.5rem;
+    position: sticky;
+    top: 30%;
+    transform: rotate(90deg);
+    z-index: 2;
+}
 
+#education>#timeline>#time-traveller{
+    font-size: 5rem;
+}
 
-
-
-
-
-
-
+#education{
+    z-index: -1;
+}
 
 /*************Portfolio**************/
 #portfolio{
@@ -276,7 +384,8 @@ img[src$="jpeg"]{
     align-items: center;
     width: 100%;
     margin-left: 0%;
-    margin-bottom: 100px;
+    padding-bottom: 50px;
+    margin-bottom: 0;
 }
 
 #portfolio h2{
@@ -335,4 +444,86 @@ img[src$="jpeg"]{
 .portfoliocontainer:hover>.portfoliodetail h3{
     color: rgb(13, 11, 11);
     text-shadow: 2px 2px 4px white;
+}
+
+
+/****************contact*******************/
+#contact{
+    background: linear-gradient(grey,black 80%);
+    font-style: sans-serif;
+    background-attachment: fixed;
+}
+
+#contact-div{
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#contactcontent{
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    justify-content: space-around;
+}
+
+#contactheading{
+    margin-top: 60px;
+    font-size: 3rem;
+}
+
+#contactcontent form{
+    margin:  30px 30px;
+    width: 40vw;
+}
+
+#contactcontent form input{
+    display: block;
+    margin: 50px 35px;
+    background-color: transparent;
+    border-style: none;
+    border-bottom: 2px solid white;
+    width: 28vw;
+    font-size: 1.2rem;
+    padding-bottom: 5px;;
+    color: white;
+}
+
+#contactcontent form input::placeholder{
+    color: white;
+}
+
+#contactcontent form input:focus{
+    outline: none;
+}
+
+#contactcontent button[type="submit"]{
+    /* margin-left: 35px; */
+    margin-left: 10vw;
+    background-color: transparent;
+    color: white;
+    text-transform: uppercase;
+    border: 2px solid white;
+    padding:  10px 20px;
+    /* width: 28vw; */
+    
+}
+
+#contactcontent button[type="submit"]:hover{
+    background: grey;
+}
+
+#contactinfo{
+    margin: 0px 30px;
+}
+
+#contactinfo h2{
+    text-transform: uppercase;
+    border-bottom: 2px solid white;
+    display: inline;
+    line-height: 2;
+    padding-bottom: 5px;
 }
